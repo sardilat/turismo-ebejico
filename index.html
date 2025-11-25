@@ -12,21 +12,6 @@
         body { font-family: 'Outfit', sans-serif; }
         .font-magic { font-family: 'Pacifico', cursive; }
         
-        /* Gradientes Mágicos inspirados en Antioquia es Mágica */
-        .bg-magic-gradient {
-            background: linear-gradient(135deg, #FF0080 0%, #7928CA 50%, #FF4D4D 100%);
-        }
-        .text-magic {
-            background: linear-gradient(to right, #FF0080, #7928CA);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .text-nature {
-            background: linear-gradient(to right, #00b09b, #96c93d);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
         /* Animación suave de flotación */
         @keyframes float {
             0% { transform: translateY(0px); }
@@ -35,7 +20,6 @@
         }
         .floating { animation: float 4s ease-in-out infinite; }
 
-        /* Estilo de Tarjetas Glass más vibrante */
         .glass-card {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(12px);
@@ -65,7 +49,10 @@
 
     <header id="inicio" class="relative pt-32 pb-40 lg:pt-48 lg:pb-56 overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover opacity-90" alt="Ebejico Paisaje">
+            <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=2070&auto=format&fit=crop" 
+                 class="w-full h-full object-cover opacity-90" 
+                 alt="Paisaje Ebéjico"
+                 onerror="this.src='https://placehold.co/1920x1080?text=Paisaje+Ebejico'">
             <div class="absolute inset-0 bg-gradient-to-b from-purple-900/40 via-transparent to-white"></div>
         </div>
 
@@ -78,18 +65,15 @@
                 <span class="font-magic text-yellow-300">Magia</span> de Ebéjico
             </h1>
             <p class="text-xl md:text-2xl text-white font-medium max-w-2xl mx-auto mb-8 drop-shadow-md">
-                Tierra de café, panela y cascadas escondidas. [cite_start]Un remanso de paz a solo 40 minutos de Medellín[cite: 32, 45].
+                Tierra de café, panela y cascadas escondidas. Un remanso de paz a solo 40 minutos de Medellín.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#rutas" class="px-8 py-4 bg-white text-purple-700 rounded-full font-extrabold shadow-xl hover:bg-gray-50 transition transform hover:scale-105">
                     Explorar Aventura
                 </a>
-                <a href="#cafe" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold hover:bg-white/20 transition">
-                    Ver Cultura Cafetera
-                </a>
             </div>
         </div>
-
+        
         <div class="absolute bottom-0 w-full leading-none z-20">
             <svg class="block w-full h-24 md:h-48" viewBox="0 0 3200 120" preserveAspectRatio="none">
                 <path d="M0,0 C200,80 600,120 1200,60 C1800,0 2400,0 3200,80 L3200,140 L0,140 Z" fill="#F9FAFB"></path>
@@ -100,53 +84,50 @@
     <section id="rutas" class="py-12 bg-gray-50 relative">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-5xl font-extrabold text-gray-900 mb-2">Colores de nuestra <span class="text-nature font-magic">Tierra</span></h2>
+                <h2 class="text-5xl font-extrabold text-gray-900 mb-2">Colores de nuestra <span class="text-green-500 font-magic">Tierra</span></h2>
                 <div class="w-20 h-2 bg-gradient-to-r from-green-400 to-blue-500 mx-auto rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="group rounded-3xl overflow-hidden shadow-2xl bg-white hover:shadow-green-500/40 transition duration-500 transform hover:-translate-y-2" data-aos="fade-right">
+                <div class="group rounded-3xl overflow-hidden shadow-2xl bg-white transition duration-500 transform hover:-translate-y-2" data-aos="fade-right">
                     <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1544979590-2c566f916f1a?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Cascadas">
+                        <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=2070&auto=format&fit=crop" 
+                             class="w-full h-full object-cover transition duration-700 group-hover:scale-110" 
+                             alt="Cascada La Esmeralda"
+                             onerror="this.src='https://placehold.co/600x400?text=Cascada+La+Esmeralda'">
                         <div class="absolute bottom-0 left-0 bg-white px-6 py-2 rounded-tr-2xl font-bold text-green-700">Ecoturismo</div>
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold mb-3 text-gray-800">Cascada de la Esmeralda</h3>
-                        [cite_start]<p class="text-gray-600 mb-4">Sumérgete en aguas cristalinas y recorre nuestros senderos ancestrales[cite: 78].</p>
-                        <ul class="text-sm text-gray-500 space-y-2">
-                            <li class="flex items-center">🌿 Senderismo "Las 33 vueltas"</li>
-                            <li class="flex items-center">🦜 Avistamiento de Aves</li>
-                        </ul>
+                        <p class="text-gray-600 mb-4">Sumérgete en aguas cristalinas y recorre nuestros senderos ancestrales.</p>
                     </div>
                 </div>
 
-                <div class="group rounded-3xl overflow-hidden shadow-2xl bg-white hover:shadow-orange-500/40 transition duration-500 transform hover:-translate-y-2" data-aos="fade-up">
+                <div class="group rounded-3xl overflow-hidden shadow-2xl bg-white transition duration-500 transform hover:-translate-y-2" data-aos="fade-up">
                     <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1510672981848-a1c4f1cb5ccf?q=80&w=2072&auto=format&fit=crop" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Iglesia">
+                        <img src="https://images.unsplash.com/photo-1548625361-9872e4521783?q=80&w=1920&auto=format&fit=crop" 
+                             class="w-full h-full object-cover transition duration-700 group-hover:scale-110" 
+                             alt="Iglesia San José"
+                             onerror="this.src='https://placehold.co/600x400?text=Iglesia+San+Jose'">
                         <div class="absolute bottom-0 left-0 bg-white px-6 py-2 rounded-tr-2xl font-bold text-orange-600">Patrimonio</div>
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold mb-3 text-gray-800">Historia Viva</h3>
-                        [cite_start]<p class="text-gray-600 mb-4">Desde la Iglesia Santuario hasta el Museo Arqueológico en El Brasil[cite: 85, 87].</p>
-                        <ul class="text-sm text-gray-500 space-y-2">
-                            <li class="flex items-center">⛪ Templo San José</li>
-                            <li class="flex items-center">🗿 Zona Arqueológica Quirimará</li>
-                        </ul>
+                        <p class="text-gray-600 mb-4">Visita la Iglesia Parroquial de San José y el Museo Arqueológico.</p>
                     </div>
                 </div>
 
-                <div class="group rounded-3xl overflow-hidden shadow-2xl bg-white hover:shadow-purple-500/40 transition duration-500 transform hover:-translate-y-2" data-aos="fade-left">
+                <div class="group rounded-3xl overflow-hidden shadow-2xl bg-white transition duration-500 transform hover:-translate-y-2" data-aos="fade-left">
                     <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Mirador">
+                        <img src="https://images.unsplash.com/photo-1533240332313-0db49b459ad6?q=80&w=1974&auto=format&fit=crop" 
+                             class="w-full h-full object-cover transition duration-700 group-hover:scale-110" 
+                             alt="Mirador Chachafruta"
+                             onerror="this.src='https://placehold.co/600x400?text=Mirador+Chachafruta'">
                         <div class="absolute bottom-0 left-0 bg-white px-6 py-2 rounded-tr-2xl font-bold text-purple-600">Paisajismo</div>
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold mb-3 text-gray-800">Miradores Mágicos</h3>
-                        [cite_start]<p class="text-gray-600 mb-4">Vistas de 360° en el Cristo de Chachafruta y los Altos de la Popa[cite: 79, 82].</p>
-                        <ul class="text-sm text-gray-500 space-y-2">
-                            <li class="flex items-center">📸 Fotografía de paisaje</li>
-                            <li class="flex items-center">🌄 Atardeceres únicos</li>
-                        </ul>
+                        <p class="text-gray-600 mb-4">Vistas de 360° en el Cristo de Chachafruta y los Altos de la Popa.</p>
                     </div>
                 </div>
             </div>
@@ -154,9 +135,6 @@
     </section>
 
     <section id="cafe" class="py-20 bg-gray-900 text-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-pink-600 rounded-full mix-blend-multiply filter blur-[100px] opacity-30 animate-pulse"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-[100px] opacity-30 animate-pulse"></div>
-
         <div class="max-w-7xl mx-auto px-4 relative z-10">
             <div class="flex flex-col md:flex-row items-center justify-between gap-12">
                 <div class="md:w-1/2" data-aos="fade-right">
@@ -166,37 +144,34 @@
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 font-magic">Dulzura de Caña</span>
                     </h2>
                     <p class="text-lg text-gray-300 mb-8">
-                        Ebéjico huele a tradición. Visita nuestras fincas cafeteras y trapiches paneleros. [cite_start]Una experiencia sensorial única[cite: 60, 61, 63].
+                        Ebéjico huele a tradición. Visita nuestras fincas cafeteras y trapiches paneleros.
                     </p>
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 hover:bg-white/20 transition cursor-pointer">
+                        <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20">
                             <h4 class="font-bold text-yellow-400">☕ Finca Kaffezio</h4>
                             <p class="text-sm text-gray-300">Vereda Comunidad</p>
-                            [cite_start]<p class="text-xs text-gray-400 mt-1">📞 311 396 1396 [cite: 95]</p>
+                            <p class="text-xs text-gray-400 mt-1">📞 311 396 1396</p>
                         </div>
-                        <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 hover:bg-white/20 transition cursor-pointer">
+                        <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20">
                             <h4 class="font-bold text-orange-400">🍬 Trapiche La Heroína</h4>
                             <p class="text-sm text-gray-300">Vereda La Clara</p>
-                            [cite_start]<p class="text-xs text-gray-400 mt-1">📞 318 479 6493 [cite: 95]</p>
-                        </div>
-                        <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 hover:bg-white/20 transition cursor-pointer">
-                            <h4 class="font-bold text-yellow-400">☕ Finca Los Cedros</h4>
-                            <p class="text-sm text-gray-300">Vereda El Cedro</p>
-                            [cite_start]<p class="text-xs text-gray-400 mt-1">📞 315 723 4078 [cite: 95]</p>
-                        </div>
-                        <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 hover:bg-white/20 transition cursor-pointer">
-                            <h4 class="font-bold text-orange-400">🍬 Trapiche Blanquizal</h4>
-                            <p class="text-sm text-gray-300">Sector Blanquizal</p>
-                            [cite_start]<p class="text-xs text-gray-400 mt-1">📞 314 862 1577 [cite: 95]</p>
+                            <p class="text-xs text-gray-400 mt-1">📞 318 479 6493</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="md:w-1/2 relative" data-aos="zoom-in">
                     <div class="relative w-full h-[500px]">
-                        <img src="https://images.unsplash.com/photo-1596918846985-783515024227?q=80&w=1974&auto=format&fit=crop" class="absolute top-0 right-0 w-64 h-64 rounded-full object-cover border-4 border-yellow-400 shadow-2xl z-10 floating" alt="Café">
-                        <img src="https://images.unsplash.com/photo-1616489370837-e522b109b83a?q=80&w=1974&auto=format&fit=crop" class="absolute bottom-10 left-10 w-56 h-56 rounded-full object-cover border-4 border-orange-500 shadow-2xl z-20" style="animation-delay: 1s;" alt="Panela">
+                        <img src="https://images.unsplash.com/photo-1596918846985-783515024227?q=80&w=1974&auto=format&fit=crop" 
+                             class="absolute top-0 right-0 w-64 h-64 rounded-full object-cover border-4 border-yellow-400 shadow-2xl z-10 floating" 
+                             alt="Café Ebéjico"
+                             onerror="this.src='https://placehold.co/400x400?text=Cafe'">
+                        <img src="https://images.unsplash.com/photo-1616489370837-e522b109b83a?q=80&w=1974&auto=format&fit=crop" 
+                             class="absolute bottom-10 left-10 w-56 h-56 rounded-full object-cover border-4 border-orange-500 shadow-2xl z-20" 
+                             style="animation-delay: 1s;" 
+                             alt="Panela Ebéjico"
+                             onerror="this.src='https://placehold.co/400x400?text=Panela'">
                     </div>
                 </div>
             </div>
@@ -205,37 +180,34 @@
 
     <footer id="contacto" class="bg-gradient-to-r from-purple-900 to-indigo-900 text-white pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-magic mb-6">Ebéjico te espera con los brazos abiertos</h2>
+            <h2 class="text-3xl font-magic mb-6">Ebéjico te espera</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-left bg-white/10 p-8 rounded-3xl backdrop-blur-sm">
                 <div>
                     <h4 class="font-bold text-yellow-400 text-xl mb-4">📍 Ubicación</h4>
-                    <p>A solo 40 kms de Medellín por el Túnel de Occidente.</p>
+                    <p>A solo 40 kms de Medellín.</p>
                 </div>
                 <div>
                     <h4 class="font-bold text-pink-400 text-xl mb-4">🆘 Emergencias</h4>
                     <p>Hospital: 300 980 2946</p>
-                    [cite_start]<p>Policía: 310 448 3500 [cite: 170]</p>
+                    <p>Policía: 310 448 3500</p>
                 </div>
                 <div>
-                    <h4 class="font-bold text-green-400 text-xl mb-4">🚕 Transporte</h4>
-                    <p>Cootrasana (Buses): 604 448 3038</p>
-                    [cite_start]<p>Mototaxis disponibles[cite: 143].</p>
+                    <h4 class="font-bold text-green-400 text-xl mb-4">🏨 Alojamiento</h4>
+                    <p>Hotel Hevexico: 314 884 4160</p>
+                    <p>Refugio Ancestral: 313 767 0169</p>
                 </div>
             </div>
             
             <p class="text-gray-400 text-sm">
-                Diseñado para el concurso Antioquia es Mágica. [cite_start]Basado en el Directorio Turístico Oficial de Ebéjico[cite: 1, 2].
+                © 2025 Turismo Ebéjico. Sitio Web para concurso Antioquia es Mágica.
             </p>
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 800,
-            once: true,
-        });
+        AOS.init({ duration: 800, once: true });
     </script>
 </body>
 </html>
