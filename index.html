@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo Ebéjico | Remanso de Paz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Outfit', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        
+        /* Efecto Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2070&auto=format&fit=crop'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efecto Parallax */
+        }
+
+        /* Gradiente Ebéjico (Verde Montaña y Café) */
+        .text-gradient {
+            background: linear-gradient(to right, #2E7D32, #795548);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 glass shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <span class="text-2xl font-bold text-green-800 tracking-wider">EBÉJICO</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#descubre" class="hover:text-green-600 transition font-medium">Descubre</a>
+                        <a href="#experiencias" class="hover:text-green-600 transition font-medium">Experiencias</a>
+                        <a href="#gastronomia" class="hover:text-green-600 transition font-medium">Café y Sabor</a>
+                        <a href="#contacto" class="px-5 py-2 rounded-full bg-green-700 text-white hover:bg-green-800 transition shadow-lg hover:shadow-green-500/30">Visítanos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="relative h-screen hero-bg flex items-center justify-center text-center px-4">
+        <div class="max-w-4xl mx-auto" data-aos="zoom-in" data-aos-duration="1000">
+            <p class="text-yellow-400 font-medium tracking-widest mb-4 uppercase text-sm">Municipio de Ebéjico - Occidente Antioqueño</p>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                Remanso de Paz,<br> Gente de Buena Cosecha
+            </h1>
+            <p class="text-xl text-gray-200 mb-10 font-light max-w-2xl mx-auto">
+                A solo 40 kms de Medellín. Descubre cascadas, café de especialidad y la calidez de nuestra historia.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#experiencias" class="px-8 py-4 bg-green-600 text-white rounded-full font-bold hover:bg-green-700 transition transform hover:-translate-y-1 shadow-lg">Explorar Rutas</a>
+                <a href="#gastronomia" class="px-8 py-4 bg-white text-green-800 rounded-full font-bold hover:bg-gray-100 transition transform hover:-translate-y-1 shadow-lg">Ruta del Café</a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 animate-bounce">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </div>
+
+    <section id="descubre" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold mb-4">Un Tesoro Natural</h2>
+                <div class="w-24 h-1 bg-green-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass p-8 rounded-3xl shadow-lg border-l-4 border-green-500" data-aos="fade-right" data-aos-delay="100">
+                    <div class="text-green-600 mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg></div>
+                    <h3 class="text-2xl font-bold mb-2">Clima Ideal</h3>
+                    <p class="text-gray-600">Promedio de 23°C. Perfecto para el cultivo de café y el descanso[cite: 48].</p>
+                </div>
+
+                <div class="glass p-8 rounded-3xl shadow-lg border-l-4 border-yellow-500 bg-orange-50" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-yellow-600 mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div>
+                    <h3 class="text-2xl font-bold mb-2">Cerca de Todo</h3>
+                    <p class="text-gray-600">Conexión directa por el Túnel de Occidente. A un paso de la ciudad, en medio de la naturaleza[cite: 33, 54].</p>
+                </div>
+
+                <div class="glass p-8 rounded-3xl shadow-lg border-l-4 border-blue-500" data-aos="fade-left" data-aos-delay="300">
+                    <div class="text-blue-600 mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                    <h3 class="text-2xl font-bold mb-2">Tradición</h3>
+                    <p class="text-gray-600">Fundado en 1830. Tierra de los Nutabes y cuna de gente trabajadora[cite: 36, 42].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiencias" class="bg-white py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gradient" data-aos="fade-up">Experiencias Inolvidables</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[300px]">
+                
+                <div class="md:col-span-2 md:row-span-2 relative group rounded-3xl overflow-hidden shadow-xl" data-aos="zoom-in">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Senderismo">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
+                        <h3 class="text-white text-3xl font-bold">Rutas de Senderismo</h3>
+                        <p class="text-gray-300 mt-2">Camino Ancestral Las 33 vueltas y Puente La Clara[cite: 98, 100].</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-2 relative group rounded-3xl overflow-hidden shadow-xl" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Cascada">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col justify-center items-center p-4 text-center group-hover:bg-black/60 transition">
+                        <h3 class="text-white text-2xl font-bold">Cascada de la Esmeralda</h3>
+                        <p class="text-white text-sm opacity-0 group-hover:opacity-100 transition translate-y-4 group-hover:translate-y-0">Un espectáculo natural imperdible[cite: 78].</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-1 relative group rounded-3xl overflow-hidden shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1533240332313-0db49b459ad6?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover" alt="Mirador">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-6">
+                        <h3 class="text-white font-bold">Cristo de Chachafruta</h3>
+                        <span class="text-xs text-yellow-300">Mirador 360° [cite: 79]</span>
+                    </div>
+                </div>
+
+                <div class="md:col-span-1 relative group rounded-3xl overflow-hidden shadow-xl" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover" alt="Glamping">
+                    <div class="absolute inset-0 bg-green-900/80 flex flex-col justify-center items-center p-6 text-center">
+                        <h3 class="text-white font-bold text-xl mb-2">Glamping & Relax</h3>
+                        <p class="text-gray-200 text-sm">Entreverdes, El Trébol y más opciones únicas[cite: 125].</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="gastronomia" class="bg-neutral-900 text-white py-20 px-4 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-green-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-yellow-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <h2 class="text-5xl font-bold mb-6">Tierra de Café<br><span class="text-yellow-500">y Caña</span></h2>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                        Ebéjico huele a café recién tostado y panela fresca. Descubre nuestras fincas cafeteras y vive la experiencia del grano a la taza.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-3">
+                            <span class="w-2 h-2 bg-yellow-500 rounded-full"></span>
+                            <span><strong>Kaffezio:</strong> Experiencia premium en la Vereda Comunidad[cite: 133].</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <span class="w-2 h-2 bg-yellow-500 rounded-full"></span>
+                            <span><strong>Finca Los Cedros:</strong> Tradición cafetera[cite: 133].</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <span class="w-2 h-2 bg-yellow-500 rounded-full"></span>
+                            <span><strong>Trapiche Blanquizal:</strong> La dulzura de la panela[cite: 95].</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 grid grid-cols-2 gap-4" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=2073&auto=format&fit=crop" class="rounded-2xl shadow-lg transform translate-y-8" alt="Café">
+                    <img src="https://images.unsplash.com/photo-1612197716186-b4ed4750c33a?q=80&w=1974&auto=format&fit=crop" class="rounded-2xl shadow-lg" alt="Panela">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50 px-4">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800">¿Dónde Dormir?</h2>
+                <p class="text-gray-500 mt-2">Encuentra tu refugio perfecto en Ebéjico</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100" data-aos="fade-up">
+                    <div class="h-40 bg-gray-200 rounded-xl mb-4 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop')"></div>
+                    <h3 class="font-bold text-xl mb-1">Hotel Hevexico</h3>
+                    <p class="text-sm text-gray-500 mb-4">Ubicado en el casco urbano.</p>
+                    <a href="tel:3148844160" class="block text-center w-full py-2 border border-green-600 text-green-600 rounded-lg hover:bg-green-600 hover:text-white transition">Reservar: 314 884 4160</a>
+                    <span class="text-xs text-gray-400 mt-2 block text-center">[cite: 122]</span>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                     <div class="h-40 bg-gray-200 rounded-xl mb-4 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?q=80&w=2070&auto=format&fit=crop')"></div>
+                    <h3 class="font-bold text-xl mb-1">Refugio Ancestral</h3>
+                    <p class="text-sm text-gray-500 mb-4">Conexión con la naturaleza.</p>
+                    <a href="tel:3137670169" class="block text-center w-full py-2 border border-green-600 text-green-600 rounded-lg hover:bg-green-600 hover:text-white transition">Reservar: 313 767 0169</a>
+                    <span class="text-xs text-gray-400 mt-2 block text-center">[cite: 122]</span>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                     <div class="h-40 bg-gray-200 rounded-xl mb-4 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1587061949409-02df41d5e562?q=80&w=2070&auto=format&fit=crop')"></div>
+                    <h3 class="font-bold text-xl mb-1">Fincas de Recreo</h3>
+                    <p class="text-sm text-gray-500 mb-4">La Victoria, La Carmelita y más.</p>
+                    <a href="#contacto" class="block text-center w-full py-2 border border-green-600 text-green-600 rounded-lg hover:bg-green-600 hover:text-white transition">Ver Lista Completa</a>
+                    <span class="text-xs text-gray-400 mt-2 block text-center">[cite: 117]</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto" class="bg-gray-900 text-gray-300 py-12 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <h3 class="text-white text-2xl font-bold mb-4">Alcaldía de Ebéjico</h3>
+                <p class="mb-4">Oficina de Turismo. Promovemos el desarrollo sostenible y la cultura de nuestra región.</p>
+                <p class="text-sm">Diseño basado en el directorio oficial[cite: 179].</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Emergencias</h4>
+                <ul class="space-y-2 text-sm">
+                    <li>Hospital: 300 980 2946 [cite: 170]</li>
+                    <li>Policía: 310 448 3500 [cite: 170]</li>
+                    <li>Bomberos: 320 622 0896 [cite: 170]</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Transporte</h4>
+                <ul class="space-y-2 text-sm">
+                    <li>Cootrasana: 604 448 3038 [cite: 143]</li>
+                    <li>Taxis / Mototaxis disponibles en el parque principal.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm">
+            &copy; 2025 Turismo Ebéjico. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+    </script>
+</body>
+</html>
