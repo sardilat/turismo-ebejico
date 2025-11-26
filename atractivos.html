@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atractivos Turísticos | Ebéjico es Mágico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .font-magic {
+            font-family: 'Pacifico', cursive;
+        }
+
+        /* Loader */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: white;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #16a34a;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1920&auto=format&fit=crop');
+            /* Nature/Landscape vibe */
+            background-color: #14532d;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-green-500 selection:text-white">
+
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center gap-2 group cursor-pointer">
+                    <img src="logo-alcaldia.png"
+                        class="w-12 h-auto object-contain drop-shadow-md group-hover:scale-110 transition duration-300"
+                        alt="Alcaldía de Ebéjico">
+                    <div>
+                        <span class="block text-xl font-extrabold tracking-tight">Ebéjico<span
+                                class="text-green-600">.travel</span></span>
+                        <span class="block text-[10px] text-gray-500 uppercase tracking-widest font-bold">Occidente
+                            Antioqueño</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex space-x-8 items-center font-bold text-sm text-slate-600">
+                    <a href="index.html" class="hover:text-green-600 transition relative group">INICIO<span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span></a>
+                    <a href="#" class="text-green-600 relative group">ATRACTIVOS<span
+                            class="absolute bottom-0 left-0 w-full h-0.5 bg-green-600"></span></a>
+                    <a href="fiestas.html" class="hover:text-green-600 transition relative group">FIESTAS<span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative h-[60vh] flex items-center justify-center hero-bg overflow-hidden">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 text-center px-4 max-w-5xl mt-16">
+            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight drop-shadow-2xl"
+                data-aos="zoom-in">
+                Tesoros por <span class="font-magic text-green-400">Descubrir</span>
+            </h1>
+            <p class="text-xl text-gray-100 font-light mb-10 max-w-2xl mx-auto drop-shadow-md" data-aos="fade-up"
+                data-aos-delay="200">
+                Recorre nuestros paisajes, historia y cultura. Cada rincón de Ebéjico tiene una historia que contarte.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-24 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-green-600 font-bold tracking-widest uppercase text-sm">Destinos Imperdibles</span>
+                <h2 class="text-5xl font-black text-slate-900 mt-2">Nuestros <span
+                        class="text-green-600">Atractivos</span></h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 1. Cascada de la Esmeralda -->
+                <div class="bg-white rounded-[2rem] shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 group"
+                    data-aos="fade-up">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=1920&auto=format&fit=crop"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                            alt="Cascada de la Esmeralda">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-black text-slate-900 mb-2">Cascada de la Esmeralda</h3>
+                        <p class="text-slate-600 text-sm">Una caída de agua cristalina rodeada de exuberante vegetación.
+                            Ideal para conectar con la naturaleza.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Cristo de Chachafruta -->
+                <div class="bg-white rounded-[2rem] shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 group"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1597868165956-1a311a929c8d?q=80&w=1920&auto=format&fit=crop"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                            alt="Cristo de Chachafruta">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-black text-slate-900 mb-2">Cristo de Chachafruta</h3>
+                        <p class="text-slate-600 text-sm">Mirador de 360° con una vista panorámica inigualable del
+                            occidente antioqueño.</p>
+                    </div>
+                </div>
+
+                <!-- 3. Zona Arqueológica Quirimará -->
+                <div class="bg-white rounded-[2rem] shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 group"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1518182170546-0766ce6fec56?q=80&w=1920&auto=format&fit=crop"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                            alt="Zona Arqueológica">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-black text-slate-900 mb-2">Zona Arqueológica Quirimará</h3>
+                        <p class="text-slate-600 text-sm">Vestigios de nuestros ancestros en la vereda Quirimará. Un
+                            viaje al pasado precolombino.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Experiencias Agro turísticas -->
+                <div class="bg-white rounded-[2rem] shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 group"
+                    data-aos="fade-up">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1920&auto=format&fit=crop"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                            alt="Agroturismo">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-black text-slate-900 mb-2">Experiencias Agro turísticas</h3>
+                        <p class="text-slate-600 text-sm">Vive la cultura cafetera y panelera de primera mano. Aprende
+                            sobre nuestros cultivos.</p>
+                    </div>
+                </div>
+
+                <!-- 5. Altos de La Popa y El Retiro -->
+                <div class="bg-white rounded-[2rem] shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 group"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1920&auto=format&fit=crop"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                            alt="Montañas">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-black text-slate-900 mb-2">Altos de La Popa y El Retiro</h3>
+                        <p class="text-slate-600 text-sm">Cimas imponentes perfectas para el senderismo y la
+                            contemplación del paisaje montañoso.</p>
+                    </div>
+                </div>
+
+                <!-- 6. Fincas de Recreo y Glampings -->
+                <div class="bg-white rounded-[2rem] shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 group"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1499696010180-ea84dfb25cf3?q=80&w=1920&auto=format&fit=crop"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                            alt="Glamping">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-black text-slate-900 mb-2">Descanso y Confort</h3>
+                        <p class="text-slate-600 text-sm">Fincas de recreo, cabañas y glampings para disfrutar de una
+                            estadía inolvidable.</p>
+                    </div>
+                </div>
+
+                <!-- 7. Senderismo y Avistamiento -->
+                <div class="bg-white rounded-[2rem] shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 group"
+                    data-aos="fade-up">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=1920&auto=format&fit=crop"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                            alt="Senderismo">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-black text-slate-900 mb-2">Naturaleza Viva</h3>
+                        <p class="text-slate-600 text-sm">Rutas de senderismo, paisajismo y avistamiento de aves para
+                            los amantes de la biodiversidad.</p>
+                    </div>
+                </div>
+
+                <!-- 8. Iglesia Parroquial de San José -->
+                <div class="bg-white rounded-[2rem] shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 group"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-64 overflow-hidden">
+                        <img src="iglesia_ebejico.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                            alt="Iglesia San José">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-black text-slate-900 mb-2">Iglesia de San José</h3>
+                        <p class="text-slate-600 text-sm">Templo Santuario en el corazón de Ebéjico. Joya arquitectónica
+                            y espiritual.</p>
+                    </div>
+                </div>
+
+                <!-- 9. Casa Museo Arqueológico -->
+                <div class="bg-white rounded-[2rem] shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 group"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?q=80&w=1920&auto=format&fit=crop"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                            alt="Museo">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-black text-slate-900 mb-2">Casa Museo Arqueológico</h3>
+                        <p class="text-slate-600 text-sm">Ubicado en El Brasil, resguarda la memoria histórica y
+                            cultural de nuestro municipio.</p>
+                    </div>
+                </div>
+
+                <!-- 10. Quebradas -->
+                <div class="bg-white rounded-[2rem] shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 group"
+                    data-aos="fade-up">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=1920&auto=format&fit=crop"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                            alt="Quebradas">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-black text-slate-900 mb-2">Riqueza Hídrica</h3>
+                        <p class="text-slate-600 text-sm">Disfruta de las cristalinas aguas de las quebradas La Clara,
+                            La Sucia y La Juan Ramos.</p>
+                    </div>
+                </div>
+
+                <!-- 11. Casa de la Cultura -->
+                <div class="bg-white rounded-[2rem] shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 group"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1481277542470-605612bd2d61?q=80&w=1920&auto=format&fit=crop"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                            alt="Cultura">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-black text-slate-900 mb-2">Casa de la Cultura</h3>
+                        <p class="text-slate-600 text-sm">Rafael Arredondo Velilla. El centro de las expresiones
+                            artísticas y culturales de Ebéjico.</p>
+                    </div>
+                </div>
+
+                <!-- 12. Iglesia de Sevilla -->
+                <div class="bg-white rounded-[2rem] shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 group"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1548625361-e8ac71635815?q=80&w=1920&auto=format&fit=crop"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                            alt="Iglesia Sevilla">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-black text-slate-900 mb-2">Iglesia de Sevilla</h3>
+                        <p class="text-slate-600 text-sm">Nuestra Señora de Chiquinquirá. Un templo lleno de fe y
+                            tradición en el corregimiento de Sevilla.</p>
+                    </div>
+                </div>
+
+                <!-- 13. Parque Cementerio de Sevilla -->
+                <div class="bg-white rounded-[2rem] shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 group"
+                    data-aos="fade-up">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?q=80&w=1920&auto=format&fit=crop"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                            alt="Cementerio">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-black text-slate-900 mb-2">Parque Cementerio</h3>
+                        <p class="text-slate-600 text-sm">Un lugar de paz y recogimiento en Sevilla, con hermosos
+                            jardines.</p>
+                    </div>
+                </div>
+
+                <!-- 14. Paseos a Caballo -->
+                <div class="bg-white rounded-[2rem] shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 group"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?q=80&w=1920&auto=format&fit=crop"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                            alt="Caballos">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-black text-slate-900 mb-2">Paseos a Caballo</h3>
+                        <p class="text-slate-600 text-sm">Recorre nuestros caminos de herradura y disfruta del paisaje a
+                            lomos de un caballo.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-300 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-2 mb-6">
+                <img src="logo-alcaldia.png" class="w-10 h-auto object-contain" alt="Alcaldía de Ebéjico">
+                <span class="text-2xl font-bold text-white">Ebéjico.travel</span>
+            </div>
+            <p class="text-sm text-slate-500">&copy; 2025 Alcaldía de Ebéjico.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        const hideLoader = () => {
+            const loader = document.getElementById('loader');
+            if (loader) {
+                loader.style.opacity = '0';
+                setTimeout(() => { loader.style.display = 'none'; }, 500);
+            }
+        };
+        window.addEventListener('load', hideLoader);
+        setTimeout(hideLoader, 4000);
+    </script>
+</body>
+
+</html>
