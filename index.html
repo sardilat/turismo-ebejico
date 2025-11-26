@@ -46,23 +46,34 @@
         .animate-float {
             animation: float 3s ease-in-out infinite;
         }
+
+        .animate-float-delay {
+            animation: float 3s ease-in-out infinite;
+            animation-delay: 0.5s;
+        }
     </style>
 </head>
 
-<body class="bg-image h-screen w-full flex items-center justify-center relative overflow-hidden">
+<body class="bg-image min-h-screen w-full flex items-center justify-center relative overflow-y-auto py-8">
     <!-- Overlay -->
     <div class="absolute inset-0 bg-black/50"></div>
 
     <!-- Content -->
-    <div class="relative z-10 px-4 w-full max-w-4xl flex flex-col md:flex-row items-center gap-8 md:gap-16">
+    <div class="relative z-10 px-4 w-full max-w-5xl flex flex-col md:flex-row items-center gap-6 md:gap-8 my-auto">
+
+        <!-- Escudo Ebéjico -->
+        <div class="w-32 md:w-56 flex-shrink-0 animate-float-delay hidden md:block">
+            <img src="escudo_ebejico.png" alt="Escudo Ebéjico"
+                class="w-full h-auto drop-shadow-2xl hover:scale-105 transition duration-500">
+        </div>
 
         <!-- Don Guillermo Image -->
-        <div class="w-64 md:w-80 flex-shrink-0 animate-float">
+        <div class="w-48 md:w-80 flex-shrink-0 animate-float">
             <img src="don_guillermo.png" alt="Don Guillermo"
                 class="w-full h-auto drop-shadow-2xl hover:scale-105 transition duration-500">
         </div>
 
-        <div class="glass-card rounded-[3rem] p-8 md:p-12 text-center text-white flex-grow">
+        <div class="glass-card rounded-[3rem] p-6 md:p-12 text-center text-white flex-grow">
             <div class="inline-block px-4 py-1 rounded-full border border-white/30 bg-white/10 backdrop-blur-md text-yellow-300
                 font-bold tracking-widest text-xs mb-6 uppercase animate-pulse">
                 🚧 Sitio en Construcción
@@ -115,9 +126,8 @@
     </div>
 
     <script>
-        // Set the date we're counting down to (5 days from now)
-        const countDownDate = new Date();
-        countDownDate.setDate(countDownDate.getDate() + 5);
+        // Set the date we're counting down to (Fixed date: Nov 29, 2025)
+        const countDownDate = new Date("Nov 29, 2025 12:00:00").getTime();
 
         // Update the count down every 1 second
         const x = setInterval(function () {
