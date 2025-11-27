@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebéjico es Mágico | Sitio en Construcción</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .font-magic {
+            font-family: 'Pacifico', cursive;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .bg-image {
+            background-image: url('background_church.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-float-delay {
+            animation: float 3s ease-in-out infinite;
+            animation-delay: 0.5s;
+        }
+    </style>
+</head>
+
+<body class="bg-image min-h-screen w-full flex items-center justify-center relative overflow-y-auto py-8">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 px-4 w-full max-w-5xl flex flex-col md:flex-row items-center gap-6 md:gap-8 my-auto">
+
+        <!-- Escudo Ebéjico -->
+        <div class="w-32 md:w-56 flex-shrink-0 animate-float-delay hidden md:block">
+            <img src="escudo_ebejico.png" alt="Escudo Ebéjico"
+                class="w-full h-auto drop-shadow-2xl hover:scale-105 transition duration-500">
+        </div>
+
+        <!-- Don Guillermo Image -->
+        <div class="w-48 md:w-80 flex-shrink-0 animate-float">
+            <img src="don_guillermo.png" alt="Don Guillermo"
+                class="w-full h-auto drop-shadow-2xl hover:scale-105 transition duration-500">
+        </div>
+
+        <div class="glass-card rounded-[3rem] p-6 md:p-12 text-center text-white flex-grow">
+            <div class="inline-block px-4 py-1 rounded-full border border-white/30 bg-white/10 backdrop-blur-md text-yellow-300
+                font-bold tracking-widest text-xs mb-6 uppercase animate-pulse">
+                🚧 Sitio en Construcción
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">
+                Algo <span class="font-magic text-green-400">Mágico</span> <br> está por llegar
+            </h1>
+
+            <p class="text-lg text-gray-200 mb-8 font-light">
+                Estamos preparando una experiencia digital única para que descubras la magia de Ebéjico.
+                Mientras esperas:
+            </p>
+
+            <!-- Countdown -->
+            <div class="flex justify-center gap-4 md:gap-6 mb-10">
+                <div class="text-center">
+                    <div id="days" class="text-2xl md:text-4xl font-black text-white">05</div>
+                    <div class="text-[10px] uppercase tracking-widest text-gray-300 mt-1">Días</div>
+                </div>
+                <div class="text-2xl md:text-4xl font-black text-white">:</div>
+                <div class="text-center">
+                    <div id="hours" class="text-2xl md:text-4xl font-black text-white">12</div>
+                    <div class="text-[10px] uppercase tracking-widest text-gray-300 mt-1">Horas</div>
+                </div>
+                <div class="text-2xl md:text-4xl font-black text-white">:</div>
+                <div class="text-center">
+                    <div id="minutes" class="text-2xl md:text-4xl font-black text-white">45</div>
+                    <div class="text-[10px] uppercase tracking-widest text-gray-300 mt-1">Min</div>
+                </div>
+                <div class="text-2xl md:text-4xl font-black text-white">:</div>
+                <div class="text-center">
+                    <div id="seconds" class="text-2xl md:text-4xl font-black text-white">00</div>
+                    <div class="text-[10px] uppercase tracking-widest text-gray-300 mt-1">Seg</div>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-4 justify-center items-center">
+                <a href="https://wa.me/573153745171" target="_blank"
+                    class="px-8 py-4 bg-green-500 hover:bg-green-600 text-white rounded-full font-bold transition transform hover:scale-105 shadow-lg flex items-center gap-3 text-lg">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                    <span>¡Don Guillermo te atenderá!</span>
+                </a>
+            </div>
+
+            <div class="mt-8 text-sm text-gray-400">
+                &copy; 2025 Alcaldía de Ebéjico. Todos los derechos reservados.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set the date we're counting down to (Fixed date: Nov 29, 2025)
+        const countDownDate = new Date("Nov 29, 2025 12:00:00").getTime();
+
+        // Update the count down every 1 second
+        const x = setInterval(function () {
+
+            // Get today's date and time
+            const now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            const distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            const daysEl = document.getElementById("days");
+            const hoursEl = document.getElementById("hours");
+            const minutesEl = document.getElementById("minutes");
+            const secondsEl = document.getElementById("seconds");
+
+            if (daysEl) daysEl.innerHTML = days.toString().padStart(2, '0');
+            if (hoursEl) hoursEl.innerHTML = hours.toString().padStart(2, '0');
+            if (minutesEl) minutesEl.innerHTML = minutes.toString().padStart(2, '0');
+            if (secondsEl) secondsEl.innerHTML = seconds.toString().padStart(2, '0');
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                if (daysEl) daysEl.innerHTML = "00";
+                if (hoursEl) hoursEl.innerHTML = "00";
+                if (minutesEl) minutesEl.innerHTML = "00";
+                if (secondsEl) secondsEl.innerHTML = "00";
+            }
+        }, 1000);
+    </script>
+
+</body>
+
+</html>
