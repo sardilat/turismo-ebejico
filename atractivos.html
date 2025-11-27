@@ -68,6 +68,76 @@
     </style>
 </head>
 
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atractivos Turísticos | Ebéjico es Mágico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .font-magic {
+            font-family: 'Pacifico', cursive;
+        }
+
+        /* Loader */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: white;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #16a34a;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1920&auto=format&fit=crop');
+            /* Nature/Landscape vibe */
+            background-color: #14532d;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+</head>
+
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-green-500 selection:text-white">
 
     <div id="loader">
@@ -84,18 +154,72 @@
                     <div>
                         <span class="block text-xl font-extrabold tracking-tight">Ebéjico<span
                                 class="text-green-600">.travel</span></span>
-                        <span class="block text-[10px] text-gray-500 uppercase tracking-widest font-bold">Occidente
+                        <span class="block text-slate-500 text-[10px] font-bold uppercase tracking-widest">Occidente
                             Antioqueño</span>
                     </div>
                 </a>
+
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center font-bold text-sm text-slate-600">
-                    <a href="index.html" class="hover:text-green-600 transition relative group">INICIO<span
+                    <a href="index.html#historia" class="hover:text-green-600 transition relative group">HISTORIA<span
                             class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span></a>
-                    <a href="#" class="text-green-600 relative group">ATRACTIVOS<span
-                            class="absolute bottom-0 left-0 w-full h-0.5 bg-green-600"></span></a>
                     <a href="fiestas.html" class="hover:text-green-600 transition relative group">FIESTAS<span
                             class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span></a>
+                    <a href="atractivos.html" class="text-green-600 transition relative group">ATRACTIVOS<span
+                            class="absolute bottom-0 left-0 w-full h-0.5 bg-green-600 transition-all"></span></a>
+                    <a href="agroturismo.html" class="hover:text-green-600 transition relative group">AGROTURISMO<span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span></a>
+                    <a href="index.html#experiencias" class="hover:text-green-600 transition relative group">QUÉ
+                        HACER<span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span></a>
+                    <a href="index.html#gastronomia" class="hover:text-green-600 transition relative group">SABORES<span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span></a>
+                    <a href="index.html#hoteles" class="hover:text-green-600 transition relative group">DORMIR<span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span></a>
+                    <a href="index.html#info"
+                        class="px-6 py-2.5 rounded-full bg-gradient-to-r from-green-600 to-red-600 text-white shadow-lg hover:shadow-green-500/50 transition transform hover:-translate-y-1">INFO
+                        ÚTIL</a>
                 </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-green-600 focus:outline-none">
+                        <svg id="icon-bars" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <svg id="icon-close" class="hidden w-8 h-8" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Container -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-slate-100 absolute w-full left-0 top-20 shadow-xl transition-all duration-300 ease-in-out">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="index.html#historia"
+                    class="block px-3 py-3 rounded-xl text-base font-bold text-slate-600 hover:text-green-600 hover:bg-green-50 transition">HISTORIA</a>
+                <a href="fiestas.html"
+                    class="block px-3 py-3 rounded-xl text-base font-bold text-slate-600 hover:text-green-600 hover:bg-green-50 transition">FIESTAS</a>
+                <a href="atractivos.html"
+                    class="block px-3 py-3 rounded-xl text-base font-bold text-green-600 bg-green-50 transition">ATRACTIVOS</a>
+                <a href="agroturismo.html"
+                    class="block px-3 py-3 rounded-xl text-base font-bold text-slate-600 hover:text-green-600 hover:bg-green-50 transition">AGROTURISMO</a>
+                <a href="index.html#experiencias"
+                    class="block px-3 py-3 rounded-xl text-base font-bold text-slate-600 hover:text-green-600 hover:bg-green-50 transition">QUÉ
+                    HACER</a>
+                <a href="index.html#gastronomia"
+                    class="block px-3 py-3 rounded-xl text-base font-bold text-slate-600 hover:text-green-600 hover:bg-green-50 transition">SABORES</a>
+                <a href="index.html#hoteles"
+                    class="block px-3 py-3 rounded-xl text-base font-bold text-slate-600 hover:text-green-600 hover:bg-green-50 transition">DORMIR</a>
+                <a href="index.html#info"
+                    class="block px-3 py-3 mt-4 text-center rounded-xl bg-gradient-to-r from-green-600 to-red-600 text-white font-bold shadow-lg">INFO
+                    ÚTIL</a>
             </div>
         </div>
     </nav>
@@ -360,6 +484,34 @@
         };
         window.addEventListener('load', hideLoader);
         setTimeout(hideLoader, 4000);
+
+        // Mobile Menu Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconBars = document.getElementById('icon-bars');
+        const iconClose = document.getElementById('icon-close');
+
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenu.classList.contains('hidden')) {
+                    iconBars.classList.remove('hidden');
+                    iconClose.classList.add('hidden');
+                } else {
+                    iconBars.classList.add('hidden');
+                    iconClose.classList.remove('hidden');
+                }
+            });
+
+            // Close menu when clicking a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    iconBars.classList.remove('hidden');
+                    iconClose.classList.add('hidden');
+                });
+            });
+        }
     </script>
 </body>
 
