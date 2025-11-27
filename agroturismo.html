@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agroturismo | Ebéjico es Mágico</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Pacifico&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Pacifico&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             font-family: 'Outfit', sans-serif;
         }
+
         .font-magic {
             font-family: 'Pacifico', cursive;
         }
+
         /* Loader */
         #loader {
             position: fixed;
@@ -29,6 +30,7 @@
             align-items: center;
             transition: opacity 0.5s ease;
         }
+
         .spinner {
             width: 50px;
             height: 50px;
@@ -37,38 +39,71 @@
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
+
         @keyframes spin {
             0% {
                 transform: rotate(0deg);
             }
+
             100% {
                 transform: rotate(360deg);
             }
         }
+
+        /* Efectos Visuales */
         .glass-nav {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
+
         .hero-bg {
-            background-image: url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1920&auto=format&fit=crop');
-            /* Farm/Nature */
-            background-color: #14532d;
+            background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop');
             background-attachment: fixed;
             background-position: center;
             background-size: cover;
         }
+
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
+            }
+        }
+
         .card-hover:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
+
+        .filter-item {
+            display: none;
+            /* Hidden by default */
+        }
+
+        .filter-item.show {
+            display: block;
+            /* Shown when filtered */
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
+
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-green-500 selection:text-white">
     <div id="loader">
         <div class="spinner"></div>
     </div>
-    <!-- Navbar -->
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -79,57 +114,43 @@
                     <div>
                         <span class="block text-xl font-extrabold tracking-tight">Ebéjico<span
                                 class="text-green-600">.travel</span></span>
-                        <span
-                            class="block text-slate-500 text-[10px] font-bold uppercase tracking-widest">Occidente
+                        <span class="block text-slate-500 text-[10px] font-bold uppercase tracking-widest">Occidente
                             Antioqueño</span>
                     </div>
                 </a>
+
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center font-bold text-sm text-slate-600">
-                    <a href="index.html#historia"
-                        class="hover:text-green-600 transition relative group">HISTORIA<span
+                    <a href="index.html#historia" class="hover:text-green-600 transition relative group">HISTORIA<span
                             class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span></a>
-                    <a href="fiestas.html"
-                        class="hover:text-green-600 transition relative group">FIESTAS<span
+                    <a href="fiestas.html" class="hover:text-green-600 transition relative group">FIESTAS<span
                             class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span></a>
-                    <a href="atractivos.html"
-                        class="hover:text-green-600 transition relative group">ATRACTIVOS<span
+                    <a href="atractivos.html" class="hover:text-green-600 transition relative group">ATRACTIVOS<span
                             class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span></a>
-                    <a href="agroturismo.html"
-                        class="text-green-600 transition relative group">AGROTURISMO<span
+                    <a href="agroturismo.html" class="text-green-600 transition relative group">AGROTURISMO<span
                             class="absolute bottom-0 left-0 w-full h-0.5 bg-green-600 transition-all"></span></a>
-                    <a href="index.html#experiencias"
-                        class="hover:text-green-600 transition relative group">QUÉ
+                    <a href="index.html#experiencias" class="hover:text-green-600 transition relative group">QUÉ
                         HACER<span
                             class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span></a>
-                    <a href="index.html#gastronomia"
-                        class="hover:text-green-600 transition relative group">SABORES<span
+                    <a href="index.html#gastronomia" class="hover:text-green-600 transition relative group">SABORES<span
                             class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span></a>
-                    <a href="index.html#hoteles"
-                        class="hover:text-green-600 transition relative group">DORMIR<span
+                    <a href="index.html#hoteles" class="hover:text-green-600 transition relative group">DORMIR<span
                             class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span></a>
                     <a href="index.html#info"
                         class="px-6 py-2.5 rounded-full bg-gradient-to-r from-green-600 to-red-600 text-white shadow-lg hover:shadow-green-500/50 transition transform hover:-translate-y-1">INFO
                         ÚTIL</a>
                 </div>
+
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn"
-                        class="text-slate-600 hover:text-green-600 focus:outline-none">
-                        <svg id="icon-bars" class="w-8 h-8" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                        <svg id="icon-close" class="hidden w-8 h-8" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-green-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl" id="icon-bars"></i>
+                        <i class="fas fa-times text-2xl hidden" id="icon-close"></i>
                     </button>
                 </div>
             </div>
         </div>
+
         <!-- Mobile Menu Container -->
         <div id="mobile-menu"
             class="hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-slate-100 absolute w-full left-0 top-20 shadow-xl transition-all duration-300 ease-in-out">
@@ -155,23 +176,18 @@
             </div>
         </div>
     </nav>
-    <!-- Hero -->
-    <header
-        class="relative h-[60vh] flex items-center justify-center text-center overflow-hidden hero-bg">
+
+    <header class="relative h-[60vh] flex items-center justify-center text-center overflow-hidden hero-bg">
         <div class="absolute inset-0 bg-black/50"></div>
         <div class="relative z-10 px-4" data-aos="fade-up">
-            <span
-                class="text-yellow-300 font-bold tracking-widest uppercase text-sm mb-4 block">Vive
-                el Campo</span>
-            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 drop-shadow-2xl">
-                Experiencias <br> <span class="font-magic text-green-400">Agroturísticas</span>
-            </h1>
-            <p class="text-xl text-gray-200 max-w-2xl mx-auto">
-                Descubre la magia de nuestras fincas: Café, Panela, Orellanas y Chocolate.
-            </p>
+            <span class="text-yellow-300 font-bold tracking-widest uppercase text-sm mb-4 block">Vive el Campo</span>
+            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 drop-shadow-2xl">Experiencias <br><span
+                    class="font-magic text-green-400">Agroturísticas</span></h1>
+            <p class="text-xl text-gray-200 max-w-2xl mx-auto">Descubre la magia de nuestras fincas: Café, Panela,
+                Orellanas y Chocolate.</p>
         </div>
     </header>
-    <!-- Content -->
+
     <section class="py-20 px-4 max-w-7xl mx-auto">
         <!-- Filters -->
         <div class="flex flex-wrap justify-center gap-4 mb-16" data-aos="fade-up">
@@ -190,6 +206,7 @@
                 class="filter-btn px-6 py-2 rounded-full bg-slate-200 hover:bg-green-600 hover:text-white transition font-bold text-sm uppercase">🍫
                 Chocolate</button>
         </div>
+
         <!-- Grid -->
         <div class="grid md:grid-cols-3 gap-8" id="grid-container">
             <!-- 1. Finca Los Cedros (Real) -->
@@ -197,8 +214,7 @@
                 onclick="openModal('Finca Los Cedros', 'Café', 'Vereda El Cedro', '315 723 4078', 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1000&auto=format&fit=crop')">
                 <div class="h-64 overflow-hidden relative">
                     <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1000&auto=format&fit=crop"
-                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-                        alt="Café">
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Café">
                     <div
                         class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-green-800 uppercase">
                         ☕ Café</div>
@@ -206,21 +222,19 @@
                 <div class="p-8">
                     <h3 class="text-2xl font-black text-slate-900 mb-2">Finca Los Cedros</h3>
                     <p class="text-slate-500 text-sm mb-4"><i
-                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda El Cedro
-                    </p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-green-600 font-bold text-sm">Ver Experiencia <i
-                                class="fas fa-arrow-right ml-1"></i></span>
-                    </div>
+                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda
+                        El Cedro </p>
+                    <div class="flex justify-between items-center"><span class="text-green-600 font-bold text-sm">Ver
+                            Experiencia <i class="fas fa-arrow-right ml-1"></i></span></div>
                 </div>
             </div>
+
             <!-- 2. Finca El Cafetal -->
             <div class="filter-item cafe bg-white rounded-[2rem] shadow-lg overflow-hidden card-hover transition duration-300 group cursor-pointer"
                 onclick="openModal('Finca El Cafetal', 'Café', 'Vereda La Clara', '300 123 4567', 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?q=80&w=1000&auto=format&fit=crop')">
                 <div class="h-64 overflow-hidden relative">
                     <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?q=80&w=1000&auto=format&fit=crop"
-                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-                        alt="Café">
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Café">
                     <div
                         class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-green-800 uppercase">
                         ☕ Café</div>
@@ -228,21 +242,19 @@
                 <div class="p-8">
                     <h3 class="text-2xl font-black text-slate-900 mb-2">Finca El Cafetal</h3>
                     <p class="text-slate-500 text-sm mb-4"><i
-                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda La Clara
-                    </p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-green-600 font-bold text-sm">Ver Experiencia <i
-                                class="fas fa-arrow-right ml-1"></i></span>
-                    </div>
+                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda
+                        La Clara </p>
+                    <div class="flex justify-between items-center"><span class="text-green-600 font-bold text-sm">Ver
+                            Experiencia <i class="fas fa-arrow-right ml-1"></i></span></div>
                 </div>
             </div>
+
             <!-- 3. Hacienda La Sierra -->
             <div class="filter-item cafe bg-white rounded-[2rem] shadow-lg overflow-hidden card-hover transition duration-300 group cursor-pointer"
                 onclick="openModal('Hacienda La Sierra', 'Café', 'Vereda El Brasil', '310 987 6543', 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1000&auto=format&fit=crop')">
                 <div class="h-64 overflow-hidden relative">
                     <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1000&auto=format&fit=crop"
-                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-                        alt="Café">
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Café">
                     <div
                         class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-green-800 uppercase">
                         ☕ Café</div>
@@ -250,21 +262,19 @@
                 <div class="p-8">
                     <h3 class="text-2xl font-black text-slate-900 mb-2">Hacienda La Sierra</h3>
                     <p class="text-slate-500 text-sm mb-4"><i
-                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda El Brasil
-                    </p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-green-600 font-bold text-sm">Ver Experiencia <i
-                                class="fas fa-arrow-right ml-1"></i></span>
-                    </div>
+                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda
+                        El Brasil </p>
+                    <div class="flex justify-between items-center"><span class="text-green-600 font-bold text-sm">Ver
+                            Experiencia <i class="fas fa-arrow-right ml-1"></i></span></div>
                 </div>
             </div>
+
             <!-- 4. Trapiche El Dulce -->
             <div class="filter-item panela bg-white rounded-[2rem] shadow-lg overflow-hidden card-hover transition duration-300 group cursor-pointer"
                 onclick="openModal('Trapiche El Dulce', 'Panela', 'Vereda San José', '320 456 7890', 'https://images.unsplash.com/photo-1589923188900-85dae523342b?q=80&w=1000&auto=format&fit=crop')">
                 <div class="h-64 overflow-hidden relative">
                     <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?q=80&w=1000&auto=format&fit=crop"
-                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-                        alt="Panela">
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Panela">
                     <div
                         class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-orange-600 uppercase">
                         🎋 Panela</div>
@@ -272,21 +282,19 @@
                 <div class="p-8">
                     <h3 class="text-2xl font-black text-slate-900 mb-2">Trapiche El Dulce</h3>
                     <p class="text-slate-500 text-sm mb-4"><i
-                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda San José
-                    </p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-green-600 font-bold text-sm">Ver Experiencia <i
-                                class="fas fa-arrow-right ml-1"></i></span>
-                    </div>
+                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda
+                        San José </p>
+                    <div class="flex justify-between items-center"><span class="text-green-600 font-bold text-sm">Ver
+                            Experiencia <i class="fas fa-arrow-right ml-1"></i></span></div>
                 </div>
             </div>
+
             <!-- 5. Molienda La Tradición -->
             <div class="filter-item panela bg-white rounded-[2rem] shadow-lg overflow-hidden card-hover transition duration-300 group cursor-pointer"
                 onclick="openModal('Molienda La Tradición', 'Panela', 'Vereda La Sucia', '311 234 5678', 'https://images.unsplash.com/photo-1527661591475-527312dd65f5?q=80&w=1000&auto=format&fit=crop')">
                 <div class="h-64 overflow-hidden relative">
                     <img src="https://images.unsplash.com/photo-1527661591475-527312dd65f5?q=80&w=1000&auto=format&fit=crop"
-                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-                        alt="Panela">
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Panela">
                     <div
                         class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-orange-600 uppercase">
                         🎋 Panela</div>
@@ -294,21 +302,19 @@
                 <div class="p-8">
                     <h3 class="text-2xl font-black text-slate-900 mb-2">Molienda La Tradición</h3>
                     <p class="text-slate-500 text-sm mb-4"><i
-                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda La Sucia
-                    </p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-green-600 font-bold text-sm">Ver Experiencia <i
-                                class="fas fa-arrow-right ml-1"></i></span>
-                    </div>
+                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda
+                        La Sucia </p>
+                    <div class="flex justify-between items-center"><span class="text-green-600 font-bold text-sm">Ver
+                            Experiencia <i class="fas fa-arrow-right ml-1"></i></span></div>
                 </div>
             </div>
+
             <!-- 6. Cañaduzal El Progreso -->
             <div class="filter-item panela bg-white rounded-[2rem] shadow-lg overflow-hidden card-hover transition duration-300 group cursor-pointer"
                 onclick="openModal('Cañaduzal El Progreso', 'Panela', 'Vereda Filo de San José', '315 876 5432', 'https://images.unsplash.com/photo-1598511757337-fe2cafc31ba0?q=80&w=1000&auto=format&fit=crop')">
                 <div class="h-64 overflow-hidden relative">
                     <img src="https://images.unsplash.com/photo-1598511757337-fe2cafc31ba0?q=80&w=1000&auto=format&fit=crop"
-                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-                        alt="Panela">
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Panela">
                     <div
                         class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-orange-600 uppercase">
                         🎋 Panela</div>
@@ -316,14 +322,14 @@
                 <div class="p-8">
                     <h3 class="text-2xl font-black text-slate-900 mb-2">Cañaduzal El Progreso</h3>
                     <p class="text-slate-500 text-sm mb-4"><i
-                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda Filo de San
-                        José</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-green-600 font-bold text-sm">Ver Experiencia <i
-                                class="fas fa-arrow-right ml-1"></i></span>
-                    </div>
+                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda
+                        Filo de San José
+                    </p>
+                    <div class="flex justify-between items-center"><span class="text-green-600 font-bold text-sm">Ver
+                            Experiencia <i class="fas fa-arrow-right ml-1"></i></span></div>
                 </div>
             </div>
+
             <!-- 7. Cultivos del Bosque -->
             <div class="filter-item orellanas bg-white rounded-[2rem] shadow-lg overflow-hidden card-hover transition duration-300 group cursor-pointer"
                 onclick="openModal('Cultivos del Bosque', 'Orellanas', 'Vereda La Renta', '300 567 8901', 'https://images.unsplash.com/photo-1510627489930-0c1b0bfb6785?q=80&w=1000&auto=format&fit=crop')">
@@ -338,14 +344,13 @@
                 <div class="p-8">
                     <h3 class="text-2xl font-black text-slate-900 mb-2">Cultivos del Bosque</h3>
                     <p class="text-slate-500 text-sm mb-4"><i
-                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda La Renta
-                    </p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-green-600 font-bold text-sm">Ver Experiencia <i
-                                class="fas fa-arrow-right ml-1"></i></span>
-                    </div>
+                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda
+                        La Renta </p>
+                    <div class="flex justify-between items-center"><span class="text-green-600 font-bold text-sm">Ver
+                            Experiencia <i class="fas fa-arrow-right ml-1"></i></span></div>
                 </div>
             </div>
+
             <!-- 8. Setas de la Montaña -->
             <div class="filter-item orellanas bg-white rounded-[2rem] shadow-lg overflow-hidden card-hover transition duration-300 group cursor-pointer"
                 onclick="openModal('Setas de la Montaña', 'Orellanas', 'Vereda El Retiro', '312 345 6789', 'https://images.unsplash.com/photo-1505820013142-f86a3439c5b2?q=80&w=1000&auto=format&fit=crop')">
@@ -360,14 +365,13 @@
                 <div class="p-8">
                     <h3 class="text-2xl font-black text-slate-900 mb-2">Setas de la Montaña</h3>
                     <p class="text-slate-500 text-sm mb-4"><i
-                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda El Retiro
-                    </p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-green-600 font-bold text-sm">Ver Experiencia <i
-                                class="fas fa-arrow-right ml-1"></i></span>
-                    </div>
+                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda
+                        El Retiro </p>
+                    <div class="flex justify-between items-center"><span class="text-green-600 font-bold text-sm">Ver
+                            Experiencia <i class="fas fa-arrow-right ml-1"></i></span></div>
                 </div>
             </div>
+
             <!-- 9. FungiVida -->
             <div class="filter-item orellanas bg-white rounded-[2rem] shadow-lg overflow-hidden card-hover transition duration-300 group cursor-pointer"
                 onclick="openModal('FungiVida', 'Orellanas', 'Vereda Murrapal', '316 789 0123', 'https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=1000&auto=format&fit=crop')">
@@ -382,14 +386,13 @@
                 <div class="p-8">
                     <h3 class="text-2xl font-black text-slate-900 mb-2">FungiVida</h3>
                     <p class="text-slate-500 text-sm mb-4"><i
-                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda Murrapal
-                    </p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-green-600 font-bold text-sm">Ver Experiencia <i
-                                class="fas fa-arrow-right ml-1"></i></span>
-                    </div>
+                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda
+                        Murrapal </p>
+                    <div class="flex justify-between items-center"><span class="text-green-600 font-bold text-sm">Ver
+                            Experiencia <i class="fas fa-arrow-right ml-1"></i></span></div>
                 </div>
             </div>
+
             <!-- 10. Cacao Ancestral -->
             <div class="filter-item chocolate bg-white rounded-[2rem] shadow-lg overflow-hidden card-hover transition duration-300 group cursor-pointer"
                 onclick="openModal('Cacao Ancestral', 'Chocolate', 'Vereda Blanquizal', '310 456 1234', 'https://images.unsplash.com/photo-1620052087057-bfd8235f5874?q=80&w=1000&auto=format&fit=crop')">
@@ -404,14 +407,13 @@
                 <div class="p-8">
                     <h3 class="text-2xl font-black text-slate-900 mb-2">Cacao Ancestral</h3>
                     <p class="text-slate-500 text-sm mb-4"><i
-                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda Blanquizal
-                    </p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-green-600 font-bold text-sm">Ver Experiencia <i
-                                class="fas fa-arrow-right ml-1"></i></span>
-                    </div>
+                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda
+                        Blanquizal </p>
+                    <div class="flex justify-between items-center"><span class="text-green-600 font-bold text-sm">Ver
+                            Experiencia <i class="fas fa-arrow-right ml-1"></i></span></div>
                 </div>
             </div>
+
             <!-- 11. Chocolate del Valle -->
             <div class="filter-item chocolate bg-white rounded-[2rem] shadow-lg overflow-hidden card-hover transition duration-300 group cursor-pointer"
                 onclick="openModal('Chocolate del Valle', 'Chocolate', 'Vereda La Quiebra', '321 654 9870', 'https://images.unsplash.com/photo-1548907040-4baa42d10919?q=80&w=1000&auto=format&fit=crop')">
@@ -426,14 +428,13 @@
                 <div class="p-8">
                     <h3 class="text-2xl font-black text-slate-900 mb-2">Chocolate del Valle</h3>
                     <p class="text-slate-500 text-sm mb-4"><i
-                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda La Quiebra
-                    </p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-green-600 font-bold text-sm">Ver Experiencia <i
-                                class="fas fa-arrow-right ml-1"></i></span>
-                    </div>
+                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda
+                        La Quiebra </p>
+                    <div class="flex justify-between items-center"><span class="text-green-600 font-bold text-sm">Ver
+                            Experiencia <i class="fas fa-arrow-right ml-1"></i></span></div>
                 </div>
             </div>
+
             <!-- 12. Aroma de Cacao -->
             <div class="filter-item chocolate bg-white rounded-[2rem] shadow-lg overflow-hidden card-hover transition duration-300 group cursor-pointer"
                 onclick="openModal('Aroma de Cacao', 'Chocolate', 'Vereda Sevilla', '313 210 9876', 'https://images.unsplash.com/photo-1511381939415-e44015466834?q=80&w=1000&auto=format&fit=crop')">
@@ -448,75 +449,60 @@
                 <div class="p-8">
                     <h3 class="text-2xl font-black text-slate-900 mb-2">Aroma de Cacao</h3>
                     <p class="text-slate-500 text-sm mb-4"><i
-                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda Sevilla</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-green-600 font-bold text-sm">Ver Experiencia <i
-                                class="fas fa-arrow-right ml-1"></i></span>
-                    </div>
+                            class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vereda
+                        Sevilla</p>
+                    <div class="flex justify-between items-center"><span class="text-green-600 font-bold text-sm">Ver
+                            Experiencia <i class="fas fa-arrow-right ml-1"></i></span></div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Modal -->
     <div id="experienceModal" class="fixed inset-0 z-[100] hidden">
         <!-- Backdrop -->
-        <div class="absolute inset-0 bg-black/90 backdrop-blur-md transition-opacity"
-            onclick="closeModal()"></div>
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md transition-opacity" onclick="closeModal()"></div>
         <!-- Modal Content -->
         <div class="relative z-10 w-full h-full flex items-center justify-center p-4">
             <div
                 class="bg-white rounded-3xl w-full max-w-5xl max-h-[90vh] overflow-y-auto shadow-2xl relative animate-[zoomIn_0.3s_ease-out]">
                 <!-- Close Button -->
                 <button onclick="closeModal()"
-                    class="absolute top-4 right-4 z-20 w-10 h-10 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center text-slate-800 transition">
-                    <i class="fas fa-times text-xl"></i>
-                </button>
+                    class="absolute top-4 right-4 z-20 w-10 h-10 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center text-slate-800 transition"><i
+                        class="fas fa-times text-xl"></i></button>
                 <div class="grid md:grid-cols-2">
                     <!-- Media Section -->
                     <div class="bg-black h-[400px] md:h-auto relative group">
                         <!-- Video Placeholder -->
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i
+                        <div class="absolute inset-0 flex items-center justify-center"><i
                                 class="fas fa-play-circle text-6xl text-white/50 group-hover:text-white transition scale-100 group-hover:scale-110 cursor-pointer"></i>
-                        </div>
-                        <img id="modalImage" src="" class="w-full h-full object-cover opacity-60"
+                        </div><img id="modalImage" src="" class="w-full h-full object-cover opacity-60"
                             alt="Experience">
                     </div>
                     <!-- Info Section -->
-                    <div class="p-8 md:p-12 flex flex-col justify-center">
-                        <span id="modalCategory"
+                    <div class="p-8 md:p-12 flex flex-col justify-center"><span id="modalCategory"
                             class="inline-block py-1 px-3 rounded-full bg-green-100 text-green-700 text-xs font-bold tracking-widest uppercase mb-4 w-fit"></span>
                         <h2 id="modalTitle" class="text-4xl font-black text-slate-900 mb-4"></h2>
-                        <div class="flex items-center gap-2 text-slate-500 mb-6">
-                            <i class="fas fa-map-marker-alt text-green-600"></i>
-                            <span id="modalLocation"></span>
-                        </div>
-                        <p class="text-slate-600 leading-relaxed mb-8">
-                            Vive una experiencia única conociendo el proceso artesanal y la
-                            tradición de nuestra tierra.
-                            Disfruta de recorridos guiados, degustaciones y la calidez de nuestra
-                            gente.
-                        </p>
+                        <div class="flex items-center gap-2 text-slate-500 mb-6"><i
+                                class="fas fa-map-marker-alt text-green-600"></i><span id="modalLocation"></span></div>
+                        <p class="text-slate-600 leading-relaxed mb-8">Vive una experiencia única conociendo el proceso
+                            artesanal y la tradición de nuestra tierra. Disfruta de recorridos guiados,
+                            degustaciones y la calidez de nuestra gente.</p>
                         <!-- Gallery Grid Placeholder -->
                         <h4 class="font-bold text-slate-900 mb-4">Galería de Momentos</h4>
                         <div class="grid grid-cols-3 gap-2 mb-8">
                             <div class="aspect-square bg-slate-100 rounded-xl overflow-hidden"><img
                                     src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400"
-                                    class="w-full h-full object-cover hover:scale-110 transition">
-                            </div>
+                                    class="w-full h-full object-cover hover:scale-110 transition"></div>
                             <div class="aspect-square bg-slate-100 rounded-xl overflow-hidden"><img
                                     src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400"
-                                    class="w-full h-full object-cover hover:scale-110 transition">
-                            </div>
+                                    class="w-full h-full object-cover hover:scale-110 transition"></div>
                             <div class="aspect-square bg-slate-100 rounded-xl overflow-hidden"><img
                                     src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=400"
-                                    class="w-full h-full object-cover hover:scale-110 transition">
-                            </div>
-                        </div>
-                        <a id="modalPhone" href="#"
-                            class="w-full py-4 bg-green-600 text-white text-center rounded-xl font-bold hover:bg-green-700 transition shadow-lg hover:shadow-green-500/30 flex items-center justify-center gap-2">
-                            <i class="fab fa-whatsapp text-xl"></i> Reservar Experiencia
-                        </a>
+                                    class="w-full h-full object-cover hover:scale-110 transition"></div>
+                        </div><a id="modalPhone" href="#"
+                            class="w-full py-4 bg-green-600 text-white text-center rounded-xl font-bold hover:bg-green-700 transition shadow-lg hover:shadow-green-500/30 flex items-center justify-center gap-2"><i
+                                class="fab fa-whatsapp text-xl"></i>Reservar Experiencia </a>
                     </div>
                 </div>
             </div>
@@ -524,54 +510,80 @@
     </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
         // Loader
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
+
             setTimeout(() => {
                 loader.style.opacity = '0';
                 setTimeout(() => loader.style.display = 'none', 500);
-            }, 500);
+            }
+
+                , 500);
         });
+
         // Filter Logic
         function filterSelection(c) {
-            var x, i;
+            var x,
+                i;
             x = document.getElementsByClassName("filter-item");
             if (c == "all") c = "";
+
             for (i = 0; i < x.length; i++) {
                 removeClass(x[i], "show");
                 if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
             }
+
             // Update active button
             var btns = document.getElementsByClassName("filter-btn");
+
             for (i = 0; i < btns.length; i++) {
                 btns[i].classList.remove("active", "bg-green-600", "text-white");
                 btns[i].classList.add("bg-slate-200");
             }
+
             event.currentTarget.classList.remove("bg-slate-200");
             event.currentTarget.classList.add("active", "bg-green-600", "text-white");
         }
+
         function addClass(element, name) {
-            var i, arr1, arr2;
+            var i,
+                arr1,
+                arr2;
             arr1 = element.className.split(" ");
             arr2 = name.split(" ");
+
             for (i = 0; i < arr2.length; i++) {
-                if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+                if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                }
             }
         }
+
         function removeClass(element, name) {
-            var i, arr1, arr2;
+            var i,
+                arr1,
+                arr2;
             arr1 = element.className.split(" ");
             arr2 = name.split(" ");
+
             for (i = 0; i < arr2.length; i++) {
                 while (arr1.indexOf(arr2[i]) > -1) {
                     arr1.splice(arr1.indexOf(arr2[i]), 1);
                 }
             }
+
             element.className = arr1.join(" ");
         }
+
         // Initial Filter
         filterSelection("all");
+
         // Modal Logic
         function openModal(title, category, location, phone, image) {
             document.getElementById('modalTitle').innerText = title;
@@ -583,55 +595,42 @@
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden'; // Prevent scrolling
         }
+
         function closeModal() {
             const modal = document.getElementById('experienceModal');
             modal.classList.add('hidden');
             document.body.style.overflow = 'auto'; // Restore scrolling
         }
+
         // Add 'show' class to all items initially for the filter to work
         var items = document.getElementsByClassName("filter-item");
+
         for (var i = 0; i < items.length; i++) {
             addClass(items[i], "show");
         }
+
     </script>
-    <style>
-        .filter-item {
-            display: none;
-            /* Hidden by default */
-        }
-        .filter-item.show {
-            display: block;
-            /* Shown when filtered */
-            animation: fadeIn 0.5s;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
-    <script>
-        // Mobile Menu Logic
+    <script> // Mobile Menu Logic
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const iconBars = document.getElementById('icon-bars');
         const iconClose = document.getElementById('icon-close');
+
         if (mobileBtn && mobileMenu) {
             mobileBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
+
                 if (mobileMenu.classList.contains('hidden')) {
                     iconBars.classList.remove('hidden');
                     iconClose.classList.add('hidden');
-                } else {
+                }
+
+                else {
                     iconBars.classList.add('hidden');
                     iconClose.classList.remove('hidden');
                 }
             });
+
             // Close menu when clicking a link
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
@@ -641,6 +640,8 @@
                 });
             });
         }
+
     </script>
 </body>
+
 </html>

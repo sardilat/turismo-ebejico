@@ -51,6 +51,7 @@
             }
         }
 
+        /* Efectos Visuales */
         .glass-nav {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
@@ -58,92 +59,24 @@
         }
 
         .hero-bg {
-            background-image: url('https://images.unsplash.com/photo-1514525253440-b393452e8d26?q=80&w=1920&auto=format&fit=crop');
-            /* Party/Festival vibe */
-            background-color: #14532d;
+            background-image: url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1920&auto=format&fit=crop');
             background-attachment: fixed;
             background-position: center;
             background-size: cover;
         }
-    </style>
-</head>
 
-<!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiestas | Ebéjico es Mágico</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Pacifico&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <style>
-        body {
-            font-family: 'Outfit', sans-serif;
-        }
-
-        .font-magic {
-            font-family: 'Pacifico', cursive;
-        }
-
-        /* Loader */
-        #loader {
-            position: fixed;
-            inset: 0;
-            background: white;
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.5s ease;
-        }
-
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #16a34a;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
             }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .hero-bg {
-            background-image: url('https://images.unsplash.com/photo-1514525253440-b393452e8d26?q=80&w=1920&auto=format&fit=crop');
-            /* Party/Festival vibe */
-            background-color: #14532d;
-            background-attachment: fixed;
-            background-position: center;
-            background-size: cover;
         }
     </style>
 </head>
 
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-green-500 selection:text-white">
-
     <div id="loader">
         <div class="spinner"></div>
     </div>
-
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -184,15 +117,8 @@
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-slate-600 hover:text-green-600 focus:outline-none">
-                        <svg id="icon-bars" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                        <svg id="icon-close" class="hidden w-8 h-8" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
+                        <i class="fas fa-bars text-2xl" id="icon-bars"></i>
+                        <i class="fas fa-times text-2xl hidden" id="icon-close"></i>
                     </button>
                 </div>
             </div>
@@ -224,16 +150,13 @@
         </div>
     </nav>
 
-    <header class="relative h-[60vh] flex items-center justify-center hero-bg overflow-hidden">
+    <header class="relative h-[60vh] flex items-center justify-center text-center overflow-hidden hero-bg">
         <div class="absolute inset-0 bg-black/50"></div>
-        <div class="relative z-10 text-center px-4 max-w-5xl mt-16">
-            <h1 class="text-6xl md:text-8xl font-black text-white mb-6 leading-tight drop-shadow-2xl"
-                data-aos="zoom-in">
-                Fiestas y <span class="font-magic text-yellow-400">Tradición</span>
-            </h1>
+        <div class="relative z-10 px-4" data-aos="fade-up">
+            <h1 class="text-6xl md:text-8xl font-black text-white mb-6 leading-tight drop-shadow-2xl">Fiestas y <span
+                    class="font-magic text-yellow-400">Tradición</span></h1>
             <p class="text-xl text-gray-100 font-light mb-10 max-w-2xl mx-auto drop-shadow-md" data-aos="fade-up"
-                data-aos-delay="200">
-                Celebra con nosotros la alegría de nuestra gente y la riqueza de nuestra cultura.
+                data-aos-delay="200">Celebra con nosotros la alegría de nuestra gente y la riqueza de nuestra cultura.
             </p>
         </div>
     </header>
@@ -245,7 +168,6 @@
                 <h2 class="text-5xl font-black text-slate-900 mt-2">Nuestras <span
                         class="text-red-600">Celebraciones</span></h2>
             </div>
-
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- Evento 1 -->
                 <div class="bg-white rounded-[2rem] shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 group"
@@ -269,7 +191,6 @@
                             Programación</button>
                     </div>
                 </div>
-
                 <!-- Evento 2 -->
                 <div class="bg-white rounded-[2rem] shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 group"
                     data-aos="fade-left">
@@ -308,17 +229,19 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
+        AOS.init({
+            duration: 800,
+            once: true
+        });
 
-        const hideLoader = () => {
+        // Loader
+        window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
-            if (loader) {
+            setTimeout(() => {
                 loader.style.opacity = '0';
-                setTimeout(() => { loader.style.display = 'none'; }, 500);
-            }
-        };
-        window.addEventListener('load', hideLoader);
-        setTimeout(hideLoader, 4000);
+                setTimeout(() => loader.style.display = 'none', 500);
+            }, 500);
+        });
 
         // Mobile Menu Logic
         const mobileBtn = document.getElementById('mobile-menu-btn');
